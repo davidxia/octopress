@@ -2,18 +2,26 @@
 #      Main Configs       #
 # ----------------------- #
 
-url: http://yoursite.com
-title: My Octopress Blog
-subtitle: A blogging framework for hackers.
-author: Your Name
-simple_search: https://www.google.com/search
-description:
+url: https://www.davidxia.com
+title: David Xia
+# subtitle: A blogging framework for hackers.
+author: David Xia
+logo:
+  small:
+    url: https://www.gravatar.com/avatar/5631ab903c74aea4375f39259e52ccd1.png
+  big:
+    url: https://i.imgur.com/BJPOY0D.jpg
+    width: 696
+    height: 696
+simple_search: http://google.com/search
+# Limit description to 160 chars.
+description: "I'm David Xia. I write software and occasionally prose."
 
 # Default date format is "ordinal" (resulting in "July 22nd 2007")
 # You can customize the format as defined in
 # http://www.ruby-doc.org/core-1.9.2/Time.html#method-i-strftime
 # Additionally, %o will give you the ordinal representation of the day
-date_format: "ordinal"
+date_format: "%B %e, %Y"
 
 # RSS / Email (optional) subscription links (change if using something like Feedburner)
 subscribe_rss: /atom.xml
@@ -27,12 +35,12 @@ email:
 
 # If publishing to a subdirectory as in http://site.com/project set 'root: /project'
 root: /
-permalink: /blog/:year/:month/:day/:title/
+permalink: /:year/:month/:title/
 source: source
 destination: public
 plugins: plugins
 code_dir: downloads/code
-category_dir: blog/categories
+category_dir: categories
 markdown: rdiscount
 rdiscount:
   extensions:
@@ -48,10 +56,45 @@ excerpt_link: "Read on &rarr;"  # "Continue reading" link text at the bottom of 
 excerpt_separator: "<!--more-->"
 
 titlecase: true       # Converts page and post titles to titlecase
+# Front matter metadata to display for each post
+metatags: [amused_by, curr_reading, curr_watching]
 
 # list each of the sidebar modules you want to include, in the order you want them to appear.
 # To add custom asides, create files in /source/_includes/custom/asides/ and add them to the list like 'custom/asides/custom_aside_name.html'
-default_asides: [asides/recent_posts.html, asides/github.html, asides/delicious.html, asides/pinboard.html, asides/googleplus.html]
+default_asides:
+  - asides/about.html
+  - custom/asides/google_side_ad.html
+  - asides/external_links.html
+  - asides/quotes.html
+  - asides/rss_links.html
+  - asides/categories.html
+
+external_links:
+  - url: https://twitter.com/davidxia_
+    text: Twitter
+  - url: https://www.facebook.com/david.xia2
+    text: Facebook
+  - url: https://www.snapchat.com/add/david.xia2
+    text: Snapchat
+  - url: https://github.com/davidxia2
+    text: GitHub
+  - url: https://keybase.io/davidxia
+    text: Keybase
+  - url: https://www.instagram.com/david.xia/
+    text: Instagram
+  - url: https://www.youtube.com/user/dx314152653
+    text: Youtube
+  - url: https://www.linkedin.com/in/davidweixia
+    text: LinkedIn
+  - url: https://plus.google.com/111695463592724886678?rel=author
+    text: Google+
+  - url: https://vimeo.com/davidxia
+    text: Vimeo
+  - url: https://stackoverflow.com/users/553994/david-xia
+    text: StackOverflow
+
+# File from which to load quotes
+quote_file: source/_quotes
 
 # Each layout uses the default asides, but they can have their own asides instead. Simply uncomment the lines below
 # and add an array with the asides you want to use.
@@ -64,17 +107,21 @@ default_asides: [asides/recent_posts.html, asides/github.html, asides/delicious.
 # ----------------------- #
 
 # Github repositories
-github_user:
+github_user: davidxia
 github_repo_count: 0
 github_show_profile_link: true
 github_skip_forks: true
 
 # Twitter
-twitter_user:
+twitter_user: davidxia_
 twitter_tweet_button: true
 
+# Facebook
+facebook_like: false
+facebook_share: true
+
 # Google +1
-google_plus_one: false
+google_plus_one: true
 google_plus_one_size: medium
 
 # Google Plus Profile
@@ -91,11 +138,11 @@ delicious_user:
 delicious_count: 3
 
 # Disqus Comments
-disqus_short_name:
+disqus_short_name: davidxia
 disqus_show_comment_count: false
 
 # Google Analytics
-google_analytics_tracking_id:
+google_analytics_tracking_id: UA-25283538-1
 
-# Facebook Like
-facebook_like: false
+# Google Adsense
+google_adsense_id: ca-pub-1777254647176109
